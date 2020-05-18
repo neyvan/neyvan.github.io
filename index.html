@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    <script>
+        var languages = ["en", "ru"];
+        var languageFound = false;
+        var userLanguage = navigator.language || navigator.browserLanguage;
+        userLanguage = userLanguage.toLowerCase().substr(0, 2);
+        for (var l = 0; l < languages.length; l++) {
+            if (userLanguage == languages[l]) {
+                window.location = ("/" + userLanguage + "/");
+                languageFound = true;
+            }
+        }
+        if (!languageFound) {
+            window.location = ("/en/");
+        }
+    </script>
+</body>
+</html>

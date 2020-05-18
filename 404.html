@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    <script>
+        var languages = ["en", "ru"];
+        var languageFound = false;
+        var userLanguage = navigator.language || navigator.browserLanguage;
+        userLanguage = userLanguage.toLowerCase().substr(0, 2);
+        for (var l = 0; l < languages.length; l++) {
+            if (userLanguage == languages[l]) {
+                window.location = ("/" + userLanguage + "/404.html");
+                languageFound = true;
+            }
+        }
+        if (!languageFound) {
+            window.location = ("/en/404.html");
+        }
+        if(window.location.href.includes("/ru")){
+            window.location = ("/ru/404.html");
+        }
+    </script>
+</body>
+</html>
